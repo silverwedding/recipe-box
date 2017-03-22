@@ -1,7 +1,5 @@
 var webpack = require("webpack");
 var path = require("path");
-const argv = require('argv');
-var CompressionPlugin = require("compression-webpack-plugin");
 
 var BUILD_DIR = path.resolve(__dirname, "src/client/public");
 var APP_DIR = path.resolve(__dirname, "src/client/app");
@@ -24,8 +22,8 @@ module.exports = {
             exclude: /node_modules/,
             loader: "babel-loader"
         }, {
-                test: /\.scss$/,
-                loaders: ['style', 'css', 'sass']
+            test: /\.scss$/,
+            loaders: ["style", "css", "sass"]
         }]
     },
     resolve: {
@@ -39,8 +37,8 @@ module.exports = {
             "React": "react"
         }),
         new webpack.DefinePlugin({
-		    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
-		}),
-		new webpack.optimize.CommonsChunkPlugin('common.js')
+            "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development")
+        }),
+        new webpack.optimize.CommonsChunkPlugin("common.js")
     ]
 };
