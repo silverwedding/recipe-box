@@ -1,3 +1,4 @@
+"use strict";
 import React from "react";
 import Recipes from "../containers/RecipesContainer";
 import AddRecipe from "./AddRecipe";

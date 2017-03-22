@@ -1,3 +1,4 @@
+"use strict";
 import React from "react";
 import Ingredients from "./Ingredients";
 import EditRecipe from "./EditRecipe";
