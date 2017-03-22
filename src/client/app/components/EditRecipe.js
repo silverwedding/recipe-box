@@ -1,4 +1,4 @@
-"use stict";
+"use strict";
 
 import React from "react";
 import EditRecipeFormContainer from "../containers/EditRecipeFormContainer";
