@@ -4,9 +4,9 @@ import RecipeForm from "../components/RecipeForm";
 import { addRecipe } from "../actions/";
 import { reduxForm } from "redux-form";
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    onSubmit: (value) => {
-        dispatch(addRecipe(value.name, value.ingredients.split("\n") || []));
+const mapDispatchToProps = (dispatch) => ({
+    onSubmit: ({ name, ingredients, method }) => {
+        dispatch(addRecipe(name, ingredients.split("\n"), method.split("\n") || []));
     }
 });
 

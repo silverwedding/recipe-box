@@ -13,11 +13,12 @@ export const addRecipe = (name, ingredients) => ({
     ingredients: ingredients
 });
 
-export const editRecipe = (id, name, ingredients) => ({
+export const editRecipe = (id, name, ingredients, method) => ({
     type: EDIT_RECIPE,
     id: id,
     name: name,
-    ingredients: ingredients
+    ingredients: ingredients,
+    method: method
 });
 
 export const deleteRecipe = (id) => ({

@@ -6,26 +6,26 @@ import { reduxForm } from "redux-form";
 
 const RecipeReduxForm = reduxForm({
     enableReinitialize: true,
-    fields: ["id", "name", "ingredients"]
+    fields: ["id", "name", "ingredients", "method"]
 })(RecipeForm);
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, { recipe: { id, name, ingredients, method } }) => {
     return (
     {
-        form: "edit-recipe-" + ownProps.recipe.id,
+        form: "edit-recipe-" + id,
         initialValues: {
-            id: ownProps.recipe.id,
-            name: ownProps.recipe.name,
-            ingredients: ownProps.recipe.ingredients.join("\n")
-
+            id: id,
+            name: name,
+            ingredients: ingredients.join("\n"),
+            method: method.join("\n")
         }
     }
     );
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    onSubmit: (value) => {
-        dispatch(editRecipe(value.id, value.name, value.ingredients.split("\n")));
+    onSubmit: ({ id, name, ingredients, method }) => {
+        dispatch(editRecipe(id, name, ingredients.split("\n"), method));
     }
 });
 

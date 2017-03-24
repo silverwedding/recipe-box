@@ -11,7 +11,6 @@ const reducers = {
 
 const reducer = combineReducers(reducers);
 
-
 export const defaultState = {
     recipes: JSON.parse(localStorage.getItem("_user_recipes")) || defaultRecipes,
     form: {}

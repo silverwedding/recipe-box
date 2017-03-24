@@ -9,20 +9,22 @@ const recipe = (state, action) => {
         return {
             id: action.id,
             name: action.name,
-            ingredients: action.ingredients
+            ingredients: action.ingredients,
+            method: action.method
         };
     case EDIT_RECIPE:
         return {
             id: action.id,
             name: action.name,
-            ingredients: action.ingredients
+            ingredients: action.ingredients,
+            method: action.method
         };
     default:
         return state;
     }
 };
 
-export const recipes = (state = [], action) => {
+export const recipes = (state = [], action = {}) => {
     switch (action.type) {
     case ADD_RECIPE:
         return [
