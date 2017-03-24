@@ -2,6 +2,7 @@
 import React from "react";
 import Ingredients from "./Ingredients";
 import EditRecipe from "./EditRecipe";
+import Instructions from "./Instructions";
 
 const Recipe = ({ recipe, deleteRecipe }) => {
     return (
@@ -26,7 +27,8 @@ const Recipe = ({ recipe, deleteRecipe }) => {
                 aria-labelledby={"heading" + recipe.id} >
                 <div className="panel-body"><h4 className="text-center">Ingredients</h4>
                 <hr />
-                <Ingredients ingredients={recipe.ingredients}/>
+                <Ingredients ingredients={recipe.ingredients} />
+                <Instructions method={recipe.method} />
                 <div className="btn-toolbar">
                         <EditRecipe recipe={recipe} />
                         <button
