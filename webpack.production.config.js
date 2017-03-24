@@ -1,6 +1,12 @@
 var webpack = require("webpack");
 var path = require("path");
 var CompressionPlugin = require("compression-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+    disable: process.env.NODE_ENV === "development"
+});
 
 var BUILD_DIR = path.resolve(__dirname, "src/client/public");
 var APP_DIR = path.resolve(__dirname, "src/client/app");
@@ -24,7 +30,15 @@ module.exports = {
             loader: "babel-loader"
         }, {
             test: /\.scss$/,
-            loaders: ["style", "css", "sass"]
+            use: extractSass.extract({
+                use: [{
+                    loader: "css-loader"
+                }, {
+                    loader: "sass-loader"
+                }],
+                // use style-loader in development
+                fallback: "style-loader"
+            })
         }]
     },
     resolve: {
@@ -34,6 +48,7 @@ module.exports = {
     // in a module that doesn't explicitly import it
     // (e.g. stateless component functions)
     plugins: [
+        extractSass,
         new webpack.ProvidePlugin({
             "React": "react"
         }),
