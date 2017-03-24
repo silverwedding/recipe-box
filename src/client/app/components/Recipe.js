@@ -25,18 +25,21 @@ const Recipe = ({ recipe, deleteRecipe }) => {
                 className="panel-collapse collapse"
                 role="tabpanel"
                 aria-labelledby={"heading" + recipe.id} >
-                <div className="panel-body"><h4 className="text-center">Ingredients</h4>
-                <hr />
-                <Ingredients ingredients={recipe.ingredients} />
-                <Instructions method={recipe.method} />
-                <div className="btn-toolbar">
-                        <EditRecipe recipe={recipe} />
-                        <button
-                            className="btn btn-default"
-                            data-toggle="modal"
-                            data-target={"#editRecipe" + recipe.id} >Edit</button>
-                        <button className="btn btn-danger" onClick={ deleteRecipe } >Delete</button>
-                </div>
+                <div className="panel-body">
+                    <h4 className="text-center">Ingredients</h4>
+                    <hr />
+                    <Ingredients ingredients={recipe.ingredients} />
+                    <h4 className="text-center">Method</h4>
+                    <hr />
+                    <Instructions method={recipe.method} />
+                    <div className="btn-toolbar">
+                            <EditRecipe recipe={recipe} />
+                            <button
+                                className="btn btn-default"
+                                data-toggle="modal"
+                                data-target={"#editRecipe" + recipe.id} >Edit</button>
+                            <button className="btn btn-danger" onClick={ deleteRecipe } >Delete</button>
+                    </div>
                 </div>
             </div>
         </div>
