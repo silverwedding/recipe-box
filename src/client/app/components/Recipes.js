@@ -30,10 +30,10 @@ const Recipes = ({ recipes }) => {
                 aria-multiselectable="true"
             >
                 <div className="row">
-                    <div className="col-xs-6">
+                    <div className="col-md-6">
                         {leftColumn}
                     </div>
-                    <div className="col-xs-6">
+                    <div className="col-md-6">
                         {rightColumn}
                     </div>
                 </div>
