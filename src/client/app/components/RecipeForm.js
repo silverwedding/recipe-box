@@ -12,7 +12,7 @@ const RecipeForm = (props) => {
                     id="id"
                     component="input"
                     className="form-control"
-                    type="text" />
+                    type="hidden" />
                 <div className="form-group">
                 <label htmlFor="recipeName">Recipe Name</label>
                     <Field

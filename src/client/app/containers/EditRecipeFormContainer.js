@@ -25,7 +25,7 @@ const mapStateToProps = (state, { recipe: { id, name, ingredients, method } }) =
 
 const mapDispatchToProps = (dispatch) => ({
     onSubmit: ({ id, name, ingredients, method }) => {
-        dispatch(editRecipe(id, name, ingredients.split("\n"), method));
+        dispatch(editRecipe(id, name, ingredients.split("\n"), method.split("\n")));
     }
 });
 
