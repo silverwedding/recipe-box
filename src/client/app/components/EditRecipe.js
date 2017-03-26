@@ -1,6 +1,5 @@
 "use strict";
-
-import React from "react";
+import React, { PropTypes } from "react";
 import EditRecipeFormContainer from "../containers/EditRecipeFormContainer";
 
 const EditRecipe = ({ recipe }) => {
@@ -24,12 +23,24 @@ const EditRecipe = ({ recipe }) => {
                     <h4 className="modal-title" id="myModalLabel">Modal title</h4>
                     </div>
                     <div className="modal-body">
-                        <EditRecipeFormContainer recipe={recipe}/>
+                        <EditRecipeFormContainer recipe={recipe} />
                     </div>
                 </div>
             </div>
         </div>
     );
 };
+
+EditRecipe.propTypes = {
+    recipe: PropTypes.shape(
+        {
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            ingredients: PropTypes.array.isRequired,
+            method: PropTypes.array.isRequired
+        }
+    )
+};
+
 
 export default EditRecipe;

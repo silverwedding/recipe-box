@@ -1,5 +1,4 @@
 "use strict";
-
 require("../sass/style.scss");
 import React from "react";
 import RecipeBox from "./RecipeBox";

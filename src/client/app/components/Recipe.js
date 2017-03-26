@@ -1,5 +1,5 @@
 "use strict";
-import React from "react";
+import React, { PropTypes } from "react";
 import Ingredients from "./Ingredients";
 import EditRecipe from "./EditRecipe";
 import Instructions from "./Instructions";
@@ -26,24 +26,42 @@ const Recipe = ({ recipe, deleteRecipe }) => {
                 role="tabpanel"
                 aria-labelledby={"heading" + recipe.id} >
                 <div className="panel-body">
-                    <h4 className="text-center">Ingredients</h4>
+                    <h4 className="text-center recipe-h4">Ingredients</h4>
                     <hr />
                     <Ingredients ingredients={recipe.ingredients} />
-                    <h4 className="text-center">Method</h4>
+                    <h4 className="text-center recipe-h4">Method</h4>
                     <hr />
                     <Instructions method={recipe.method} />
                     <div className="btn-toolbar">
                             <EditRecipe recipe={recipe} />
                             <button
-                                className="btn btn-default"
+                                className="btn btn-default edit-btn"
                                 data-toggle="modal"
-                                data-target={"#editRecipe" + recipe.id} >Edit</button>
-                            <button className="btn btn-danger" onClick={ deleteRecipe } >Delete</button>
+                                data-target={"#editRecipe" + recipe.id} >
+                                Edit
+                            </button>
+                            <button
+                                className="btn btn-default delete-btn"
+                                onClick={ deleteRecipe } >
+                                Delete
+                            </button>
                     </div>
                 </div>
             </div>
         </div>
     );
+};
+
+Recipe.propTypes = {
+    recipe: PropTypes.shape(
+        {
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            ingredients: PropTypes.array.isRequired,
+            method: PropTypes.array.isRequired
+        }
+    ),
+    deleteRecipe: PropTypes.func.isRequired
 };
 
 export default Recipe;

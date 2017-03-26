@@ -1,9 +1,8 @@
 "use strict";
-
 import React from "react";
 import AddRecipeFormContainer from "../containers/AddRecipeFormContainer";
 
-const AddRecipe = ({ addRecipe }) => {
+const AddRecipe = () => {
     return (
         <div
             className="modal fade"

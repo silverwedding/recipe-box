@@ -1,5 +1,5 @@
 "use strict";
-import React from "react";
+import React, { PropTypes } from "react";
 
 const Ingredients = ({ ingredients }) => {
     const ingredientsList = ingredients.map((ingredient, i) => (
@@ -9,6 +9,10 @@ const Ingredients = ({ ingredients }) => {
     return (
         <ul className="list-group">{ingredientsList}</ul>
     );
+};
+
+Ingredients.propTypes = {
+    ingredients: PropTypes.array.isRequired
 };
 
 export default Ingredients;

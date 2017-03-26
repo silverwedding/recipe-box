@@ -6,7 +6,7 @@ import { reduxForm } from "redux-form";
 
 const mapDispatchToProps = (dispatch) => ({
     onSubmit: ({ name, ingredients, method }) => {
-        dispatch(addRecipe(name, ingredients.split("\n"), method.split("\n") || []));
+        dispatch(addRecipe(name, ingredients.split("\n") || [], method.split("\n") || []));
     }
 });
 

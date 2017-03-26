@@ -1,5 +1,5 @@
 "use strict";
-import React from "react";
+import React, { PropTypes } from "react";
 
 const Instructions = ({ method }) => {
     const instructions = method.map((instruction, i) => (
@@ -9,6 +9,10 @@ const Instructions = ({ method }) => {
     return (
         <ul className="list-group">{instructions}</ul>
     );
+};
+
+Instructions.propTypes = {
+    method: PropTypes.array.isRequired
 };
 
 export default Instructions;

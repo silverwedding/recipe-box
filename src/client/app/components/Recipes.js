@@ -1,5 +1,5 @@
 "use strict";
-import React from "react";
+import React, { PropTypes } from "react";
 import RecipeContainer from "../containers/RecipeContainer";
 
 const Recipes = ({ recipes }) => {
@@ -39,6 +39,10 @@ const Recipes = ({ recipes }) => {
                 </div>
             </div>
     );
+};
+
+Recipes.propTypes = {
+    recipes: PropTypes.array
 };
 
 export default Recipes;

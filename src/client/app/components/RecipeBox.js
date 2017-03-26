@@ -3,7 +3,7 @@ import React from "react";
 import Recipes from "../containers/RecipesContainer";
 import AddRecipe from "./AddRecipe";
 
-const RecipeBox = ({ addRecipe }) => (
+const RecipeBox = () => (
     <div className='recipe-box'>
         <button
             type="button"
