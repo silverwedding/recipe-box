@@ -6,11 +6,12 @@ const EDIT_RECIPE = "EDIT_RECIPE";
 
 let nextRecipeId = 4;
 
-export const addRecipe = (name, ingredients) => ({
+export const addRecipe = (name, ingredients, method) => ({
     type: ADD_RECIPE,
     id: nextRecipeId++,
     name: name,
-    ingredients: ingredients
+    ingredients: ingredients,
+    method: method
 });
 
 export const editRecipe = (id, name, ingredients, method) => ({
