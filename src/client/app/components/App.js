@@ -1,7 +1,7 @@
-"use strict";
-require("../sass/style.scss");
-import React from "react";
-import RecipeBox from "./RecipeBox";
+'use strict';
+require('../sass/style.scss');
+import React from 'react';
+import RecipeBox from './RecipeBox';
 
 const App = () => (
     <div className="container-fluid">
