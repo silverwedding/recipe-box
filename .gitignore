@@ -1,5 +1,6 @@
 node_modules
-src/client/public/app.bundle.js
+src/client/public/*.js
+src/client/public/index.html
 npm-debug.log
 .DS_Store
 *.gz
