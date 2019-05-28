@@ -103,6 +103,6 @@
     "webpack": "^3.6.0",
     "webpack-clean-obsolete-chunks": "^0.2.0",
     "webpack-cleanup-plugin": "^0.5.1",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-dev-server": "^3.1.11"
   }
 }
